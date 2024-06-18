@@ -1,0 +1,105 @@
+/* || General Styles */
+@import url("https://fonts.cdnfonts.com/css/minecraft-4");
+
+:root {
+  --font: "Minecraft", sans-serif;
+
+  --sky-color: 110, 177, 255;
+  --grass-color: 94, 157, 52;
+  --dirt-color: 141, 101, 69;
+  --stone-color: 119, 119, 199;
+  --water-color: 15, 94, 156;
+  --obsidian-color: 58, 50, 45;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: rgb(var(--sky-color));
+  font-family: var(--font);
+  font-size: 2em;
+  color: white;
+}
+
+/* || Calculator Styles */
+.title {
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.calc-container {
+  width: 80vw;
+  max-width: 250px;
+  display: grid;
+  grid-template: "display display" "numbers buttons" / 1fr 40px;
+  padding: 15px 10px;
+  background-color: rgb(var(--grass-color));
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+  grid-area: display;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  background-color: rgb(var(--dirt-color));
+  border: none;
+}
+
+.display > .previousOperation {
+  min-height: 1.2em;
+  margin-bottom: 5px;
+  font-size: 1.075em;
+  color: rgb(182, 182, 182);
+  overflow-wrap: break-word;
+}
+
+.display > .currentOperation {
+  min-height: 1.2em;
+  font-size: 1.2em;
+  color: white;
+  overflow-wrap: break-word;
+}
+
+.numbers-container {
+  grid-area: numbers;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.buttons-container {
+  grid-area: buttons;
+  display: grid;
+  margin-right: -10px;
+  background-color: rgb(var(--stone-color));
+}
+
+/* || Buttons Styles */
+.number-btn,
+.btn {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.1s ease-in;
+}
+
+.number-btn:hover {
+  background-color: rgb(var(--water-color));
+}
+
+.btn {
+  width: 100%;
+}
+.btn:hover {
+  background-color: rgb(var(--water-color));
+}
